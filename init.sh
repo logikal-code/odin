@@ -37,8 +37,6 @@ sudo apt install --yes git ansible
 echo 'Configuring git'
 git config --global user.name "${user}"
 git config --global user.email "${email}"
-git config --global push.default current
-git config --global push.followTags true
 
 echo 'Configuring ansible'
 file=/etc/ansible/hosts
