@@ -32,16 +32,15 @@ sudo apt update && sudo apt upgrade --yes || _abort
 
 echo 'Installing packages'
 sudo snap install chromium
-sudo apt install --yes git ansible
+sudo apt install --yes git
+
+sudo apt install --yes python3-venv  # needed for pyorbs
+pip install pyorbs
+orb --bash | sudo tee "$(pkg-config --variable=completionsdir bash-completion)/orb" > /dev/null
 
 echo 'Configuring git'
 git config --global user.name "${user}"
 git config --global user.email "${email}"
-
-echo 'Configuring ansible'
-file=/etc/ansible/hosts
-line='localhost ansible_connection=local'
-sudo grep -xqF -- "${line}" "${file}" || echo "${line}" | sudo tee --append "${file}" > /dev/null
 
 echo 'Creating projects folder'
 mkdir -p ~/Projects
