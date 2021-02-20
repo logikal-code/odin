@@ -35,7 +35,7 @@ sudo snap install chromium
 sudo apt install --yes git
 
 sudo apt install --yes python3-venv  # needed for pyorbs
-pip install pyorbs
+pip3 install --upgrade pyorbs
 orb --bash | sudo tee "$(pkg-config --variable=completionsdir bash-completion)/orb" > /dev/null
 
 echo 'Configuring git'
