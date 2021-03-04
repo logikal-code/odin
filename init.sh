@@ -31,7 +31,8 @@ echo 'Updating system'
 sudo apt update && sudo apt upgrade --yes || _abort
 
 echo 'Installing packages'
-sudo snap install chromium
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install --yes ./google-chrome-stable_current_amd64.deb
 sudo apt install --yes git
 
 sudo apt install --yes python3-venv  # needed for pyorbs
